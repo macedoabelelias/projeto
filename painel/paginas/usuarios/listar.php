@@ -1,7 +1,7 @@
 <?php
 $tabela = 'usuarios';
 require_once("../../../conexao.php");
-$query = $pdo->query("SELECT * from usuarios");
+$query = $pdo->query("SELECT * from usuarios order by id desc");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 if($total_reg > 0){
@@ -46,6 +46,9 @@ for($i=0; $i < $total_reg; $i++){
         $classe_ativo = '#c4c4c4';
     }
     
+    if($nivel == 'Administrador'){
+        $senha = '******';
+    }
 }
 
 echo <<<HTML
@@ -84,6 +87,19 @@ HTML;
 
 echo <<<HTML
 </tbody>
+<small><div align="center" id="mensagem-excluir"></div></small>
 </table>
 HTML;
 ?>
+
+<script type="text/javascript">
+    $(document).ready( function () {
+    $('#tabela').DataTable({
+        "language" : {
+            "url" : '//cdn.datatables.net/plug-ins/1.13.2/i18n/pt-BR.json'
+        },
+        "ordering": false,
+        "stateSave":true
+    });
+});
+</script>
