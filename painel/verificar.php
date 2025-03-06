@@ -2,7 +2,7 @@
 @session_start();
     if(@$_SESSION['id'] == ""){
         echo '<script>window.location="painel"</script>';
-        exit();
+        exit();        
     }
     
 ?>

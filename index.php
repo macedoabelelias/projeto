@@ -6,7 +6,7 @@ $linhas = @count($res);
 $senha = '123';
 $senha_crip = md5($senha);
 if($linhas == 0){
-	$query = $pdo->query("INSERT INTO usuarios SET nome = '$nome_sistema', email = '$email_sistema',
+	$pdo->query("INSERT INTO usuarios SET nome = '$nome_sistema', email = '$email_sistema',
 	senha = '$senha', senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim'");
 }
 
