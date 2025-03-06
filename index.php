@@ -7,7 +7,8 @@ $senha = '123';
 $senha_crip = md5($senha);
 if($linhas == 0){
 	$pdo->query("INSERT INTO usuarios SET nome = '$nome_sistema', email = '$email_sistema',
-	senha = '$senha', senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim'");
+	senha = '$senha', senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim', foto = 'sem-foto.jpg',
+	telefone = '$telefone_sistema', endereco = '$endereco_sistema'");
 }
 
 
@@ -49,14 +50,14 @@ if($linhas == 0){
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="email" name="usuario" class="form-control" placeholder="E-mail">
+						<input type="email" name="usuario" class="form-control" placeholder="E-mail" required>
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" name="senha" class="form-control" placeholder="Digite sua senha">
+						<input type="password" name="senha" class="form-control" placeholder="Digite sua senha" required>
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Lembrar
