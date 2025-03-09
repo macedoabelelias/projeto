@@ -2,7 +2,7 @@
 $tabela = 'usuarios';
 require_once("../../../conexao.php");
 
-$query = $pdo->query("SELECT * from usuarios order by id desc");
+$query = $pdo->query("SELECT * from $tabela order by id desc");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 if($total_reg > 0){
@@ -101,4 +101,20 @@ HTML;
         "stateSave": true
     });
     });
+</script>
+
+<script type="text/javascript">
+    function editar(id, nome, email, telefone, endereco, nivel){
+        $('#mensagem').text('');
+        $('#titulo_inserir').text('Editar Registro');
+
+        $('#id').val(id);
+        $('#nome').val(nome);
+        $('#email').val(email);
+        $('#telefone').val(telefone);
+        $('#endereco').val(endereco);
+        $('#nivel').val(nivel);
+       
+        $('#modalForm').modal('show');
+    }
 </script>
