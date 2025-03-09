@@ -30,6 +30,7 @@
      echo 'Telefone já cadastrado!';
      exit();
   }
+  
  if($id == ""){
     $query = $pdo->prepare("INSERT INTO $tabela SET nome = :nome, email = :email, senha = '$senha', senha_crip = '$senha_crip', 
        nivel = '$nivel', ativo = 'Sim', foto = 'sem-foto.jpg', telefone = :telefone, data = curDate(), endereco = :endereco");
