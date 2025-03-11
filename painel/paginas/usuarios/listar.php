@@ -54,7 +54,10 @@ for($i=0; $i < $total_reg; $i++){
 
 echo <<<HTML
 <tr style="color:{$classe_ativo}">
-    <td>{$nome}</td>
+    <td>
+        <input type="checkbox" id="seletor-{$id}" class="form-check-input" onchange="selecionar('{$id}')">
+        {$nome}
+    </td>
     <td class="esc">{$telefone}</td>
     <td class="esc">{$email}</td>
     <td class="esc">{$nivel}</td>
@@ -63,7 +66,7 @@ echo <<<HTML
         <big><a href="#" onclick="editar('{$id}','{$nome}','{$email}','{$telefone}','{$endereco}')" 
         title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
 
-        <li class="dropdown head-dpdn2" style="display: inline-block;">
+    <li class="dropdown head-dpdn2" style="display: inline-block;">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><big><i class="fa fa-trash-o text-danger"></i></big></a>
 
 		<ul class="dropdown-menu" style="margin-left:-230px;">
@@ -73,7 +76,7 @@ echo <<<HTML
 		</div>
 		</li>										
 		</ul>
-</li>
+    </li>
 
 <big><a href="#" onclick="mostrar('{$nome}','{$email}','{$telefone}','{$endereco}','{$ativo}','{$dataF}', '{$senha}',
  '{$nivel}', '{$foto}')" title="Mostrar Dados"><i class="fa fa-info-circle text-primary"></i></a></big>
@@ -96,6 +99,7 @@ HTML;
 
 <script type="text/javascript">
     $(document).ready( function (){
+       
     $('#tabela').DataTable({
         "language" : {
            //"url" : '//cdn.datatables.net/plug-ins/1.13.2/i18n/pt-BR.json'
@@ -142,6 +146,24 @@ HTML;
         $('#email').val('');
         $('#telefone').val('');
         $('#endereco').val('');
+    }
+
+    function selecionar(id){
+        var ids = $('#ids').val();
+        if($('#seletor-'+id).is(":checked") == true){
+			var novo_id = ids + id + '-';
+			$('#ids').val(novo_id);
+		}else{
+			var retirar = ids.replace(id + '-', '');
+			$('#ids').val(retirar);
+		}
+
+        var ids_final = $('#ids').val();
+        if(ids_final == ""){
+            $('#btn-deletar').hide();
+        }else{
+            $('#btn-deletar').show();
+        }
     }
     
 </script>
