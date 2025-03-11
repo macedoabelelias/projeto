@@ -3,39 +3,11 @@
  $tabela = 'usuarios';
  require_once("../conexao.php");
  
- $nome = $_POST['nome'];
- $email = $_POST['email'];
- $telefone = $_POST['telefone'];
- $conf_senha = $_POST['conf_senha'];
- $endereco = $_POST['endereco'];
- $senha = $_POST['senha'];
- $senha_crip = md5($senha);
- $id = $_POST['id_usuario'];
-
- if($conf_senha != $senha){
-    echo 'As senha não coincidem!';
-    exit();
- }
-
-
- //validação de email
- $query = $pdo->query("SELECT * from $tabela where email = '$email'");
- $res = $query->fetchAll(PDO::FETCH_ASSOC);
- $id_reg = @$res[0]['id'];
- if(@count($res) > 0 and $id != $id_reg){
-    echo 'Email já cadastrado!';
-    exit();
- }
-
-  //validação de telefone
-  $query = $pdo->query("SELECT * from $tabela where telefone = '$telefone'");
-  $res = $query->fetchAll(PDO::FETCH_ASSOC);
-  $id_reg = @$res[0]['id'];
-  if(@count($res) > 0 and $id != $id_reg){
-     echo 'Telefone já cadastrado!';
-     exit();
-  }
-
+ $nome = $_POST['nome_sistema'];
+ $email = $_POST['email_sistema'];
+ $telefone = $_POST['telefone_sistema'];
+ $endereco = $_POST['endereco_sistema'];
+ $instagram = $_POST['instagram_sistema'];
   
 //validar troca da foto
 $query = $pdo->query("SELECT * FROM usuarios where id = '$id'");

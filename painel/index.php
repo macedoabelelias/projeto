@@ -485,7 +485,7 @@ if($linhas > 0){
 							</div>
 							<div class="col-md-2">
 								<div id="divImg">
-									<img src="../../img/<?php echo $logo_sistema ?>"  width="80px" id="target-logo">									
+									<img src="../img/<?php echo $logo_sistema ?>"  width="80px" id="target-logo">									
 								</div>
 							</div>
 
@@ -498,7 +498,7 @@ if($linhas > 0){
 							</div>
 							<div class="col-md-2">
 								<div id="divImg">
-									<img src="../../img/<?php echo $favicon_sistema ?>"  width="50px" id="target-icone">									
+									<img src="../img/<?php echo $icone_sistema ?>"  width="50px" id="target-icone">									
 								</div>
 							</div>
 
@@ -517,7 +517,7 @@ if($linhas > 0){
 							</div>
 							<div class="col-md-2">
 								<div id="divImg">
-									<img src="../../img/<?php echo @$logo_rel ?>"  width="80px" id="target-logo-rel">									
+									<img src="../img/<?php echo @$logo_rel ?>"  width="80px" id="target-logo-rel">									
 								</div>
 							</div>
 
