@@ -21,7 +21,7 @@ $pag = 'usuarios';
 
 </div>
 
-<input type="text" id="ids">
+<input type="hidden" id="ids">
 
 <!-- Modal Perfil -->
 <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
