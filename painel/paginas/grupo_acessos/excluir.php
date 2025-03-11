@@ -1,15 +1,15 @@
 <?php
-$tabela = 'usuarios';
+$tabela = 'grupo_acessos';
 require_once("../../../conexao.php");
 
 $id = $_POST['id'];
 
-$query = $pdo->query("SELECT * FROM $tabela where id = '$id'");
-$res = $query->fetchAll(PDO::FETCH_ASSOC);
-$foto = $res[0]['foto'];
-
-if($foto != "sem-foto.jpg"){
-	@unlink('../../images/perfil/'.$foto);
+$query2 = $pdo->query("SELECT * from acessos where grupo = '$id' ");
+$res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
+$total_acessos = @count($res2);
+if($total_acessos > 0){
+    echo 'Exclua primeiro os acessos que pertencem a este grupo!';
+    exit();
 }
 
 $pdo->query("DELETE FROM  $tabela WHERE id = '$id'");

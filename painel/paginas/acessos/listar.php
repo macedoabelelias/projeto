@@ -1,5 +1,5 @@
 <?php 
-$tabela = 'grupo_acessos';
+$tabela = 'acessos';
 require_once("../../../conexao.php");
 
 $query = $pdo->query("SELECT * from $tabela order by id desc");
@@ -12,7 +12,7 @@ echo <<<HTML
 	<thead> 
 	<tr>
 	<th>Nome</th>	
-	<th>Acessos</th>
+	<th>Grupo</th>
 	<th>Ações</th>
 	</tr> 
 	</thead> 
@@ -23,6 +23,8 @@ HTML;
 for($i=0; $i<$linhas; $i++){
 	$id = $res[$i]['id'];
 	$nome = $res[$i]['nome'];
+	$grupo = $res[$i]['grupo'];
+	$chave = $res[$i]['chave'];
 
 $query2 = $pdo->query("SELECT * from acessos where grupo = '$id' ");
 $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);

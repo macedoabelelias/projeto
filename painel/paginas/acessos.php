@@ -1,9 +1,8 @@
 <?php
-$pag = 'grupo_acessos';
+$pag = 'acessos';
 ?>
 
-<a onclick="inserir()" type="button" class="btn btn-primary"><span class="fa fa-plus"> Grupo</span></a>
-
+<a onclick="inserir()" type="button" class="btn btn-primary"><span class="fa fa-plus"></span> Acesso</a>
 
 <li class="dropdown head-dpdn2" style="display: inline-block;">
 	<a href="#" data-toggle="dropdown" class="btn btn-danger dropdown-toggle" id="btn-deletar" style="display:none"><span class="fa fa-trash-o"></span> Excluir</a>
@@ -38,11 +37,29 @@ $pag = 'grupo_acessos';
 				
 
 					<div class="row">
-						<div class="col-md-6">							
+						<div class="col-md-5">							
 								<label>Nome</label>
 								<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu Nome" required>							
 						</div>
-						<div class="col-md-6" style="margin-top:22px">	
+						<div class="col-md-5">							
+								<label>Grupo</label>
+								<select class="form-control" name="grupo" id="grupo">
+								<option value="0">Sem Grupo</option>
+									<?php
+									$query = $pdo->query("SELECT * from grupo_acessos order by id asc");
+									$res = $query->fetchAll(PDO::FETCH_ASSOC);
+									$linhas = @count($res);
+									if($linhas > 0){
+										for($i=0; $i<$linhas;$i++){
+									?>
+										<option value="<?php echo $res[$i]['id'] ?>"><?php echo $res[$i]
+										['nome'] ?></option>	
+																		
+											
+									<?php } }?>							
+									</select>				
+						</div>
+						<div class="col-md-2" style="margin-top:22px">	
 							<button type="submit" class="btn btn-primary">Salvar</button>						
 					</div>
 
