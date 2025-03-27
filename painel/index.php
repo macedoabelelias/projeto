@@ -113,6 +113,9 @@ if($linhas > 0){
 	</script>
 	<!-- //pie-chart --><!-- index page sales reviews visitors pie chart -->
 
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-2.2.2/datatables.min.css"> 
+	<script src="https://cdn.datatables.net/v/dt/dt-2.2.2/datatables.min.js"></script>
+
 	
 </head> 
 <body class="cbp-spmenu-push">
