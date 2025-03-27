@@ -18,8 +18,10 @@ date_default_timezone_set('America/Sao_Paulo');
         echo $e;
     }
 
-    // //variáveis globais
-    // $nome_sistema = 'AM Systems';
-    // $email_sistema = 'contato@amsystems.com.br';
+    //variáveis globais
+    $nome_sistema = 'AM Systems';
+    $email_sistema = 'contato@amsystems.com.br';
+    $telefone_sistema = '(16)99992-7427';
+    $endereco_sistema = 'Rua Luiz Leporace, 1236 - Santo Agostinho - Franca(SP)'
     
 ?>
