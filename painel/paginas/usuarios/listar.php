@@ -15,6 +15,7 @@ echo <<<HTML
             <th class="esc">Telefone</th>	
             <th class="esc">Email</th>	
             <th class="esc">Nível</th>	
+            <th class="esc">Foto</th>	
             <th>Ações</th>
         </tr> 
     </thead> 
@@ -60,6 +61,7 @@ echo <<<HTML
     <td class="esc">{$telefone}</td>
     <td class="esc">{$email}</td>
     <td class="esc">{$nivel}</td>
+    <td class="esc"><img src="images/perfil/{$foto}" width="25px"></td>
     <td>
         <big><a href="#" onclick="editar('{$id}','{$nome}','{$email}','{$telefone}','{$endereco}','{$nivel}')" 
         title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
@@ -120,6 +122,22 @@ HTML;
 
         $('#modalForm').modal('show'); 
     }
+  
+    function mostrar(nome, email, telefone, endereco, ativo, data, senha, nivel, foto){
+     
+        $('#titulo_dados').text(nome);
+        $('#email_dados').text(email);
+        $('#telefone_dados').text(telefone);
+        $('#endereco_dados').text(endereco); 
+        $('#ativo_dados').text(ativo); 
+        $('#data_dados').text(data); 
+        $('#senha_dados').text(senha); 
+        $('#nivel_dados').text(nivel);  
+        $('#foto_dados').attr("src", "images/perfil/" + foto);      
+
+        $('#modalDados').modal('show'); 
+    }
+
 
     function limparCampos(){
         $('#id').val('');
