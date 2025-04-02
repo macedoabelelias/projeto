@@ -131,7 +131,8 @@ if($linhas > 0){
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<h1><a class="navbar-brand" href="index.php"><span class="fa fa-stethoscope"></span> Clínicas<span class="dashboard_text">AM Systems</span></a></h1>
+						<h1><a class="navbar-brand" href="index.php"><span class="fa fa-stethoscope"></span> Clínicas<span class="dashboard_text">
+							<?php echo $nome_sistema ?></span></a></h1>
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="sidebar-menu">
@@ -500,7 +501,7 @@ if($linhas > 0){
 							</div>
 							<div class="col-md-2">
 								<div id="divImg">
-									<img src="../../img/<?php echo $favicon_sistema ?>"  width="50px" id="target-icone">									
+									<img src="../img/<?php echo $icone_sistema ?>"  width="50px" id="target-icone">									
 								</div>
 							</div>
 
@@ -519,7 +520,7 @@ if($linhas > 0){
 							</div>
 							<div class="col-md-2">
 								<div id="divImg">
-									<img src="../../img/<?php echo @$logo_rel ?>"  width="80px" id="target-logo-rel">									
+									<img src="../img/<?php echo @$logo_rel ?>"  width="80px" id="target-logo-rel">									
 								</div>
 							</div>
 
