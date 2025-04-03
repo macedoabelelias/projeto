@@ -28,7 +28,7 @@ if($linhas > 0){
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>AM Systems</title>
+	<title><?php echo $nome_sistema ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="shortcut icon" href="../img/icone.png" type="image/x-icon">

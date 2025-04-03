@@ -22,7 +22,7 @@ if($linhas == 0){
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<title>AM Systems</title>
+	<title><?php echo $nome_sistema ?></title>
    
    
 	<!--Bootsrap 4 CDN-->
