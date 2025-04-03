@@ -1,4 +1,4 @@
-<?php
+<?php 
 $tabela = 'usuarios';
 require_once("../../../conexao.php");
 
@@ -12,7 +12,6 @@ if($foto != "sem-foto.jpg"){
 	@unlink('../../images/perfil/'.$foto);
 }
 
-$pdo->query("DELETE FROM $tabela where id = '$id'");
+$pdo->query("DELETE FROM $tabela WHERE id = '$id' ");
 echo 'Excluído com Sucesso';
-
 ?>
