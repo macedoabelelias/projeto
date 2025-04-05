@@ -184,3 +184,34 @@ $pag = 'usuarios';
 <script type="text/javascript">var pag = "<?=$pag?>"</script>
 <script src="js/ajax.js"></script>
 
+<script type="text/javascript">
+
+
+function listarPermissoes(id){
+    $.ajax({
+        url: 'paginas/' + pag + "/listar_permissoes.php",
+        method: 'POST',
+        data: {id},
+        dataType: "html",
+
+        success:function(result){
+            $("#listar_permissoes").html(result);
+            $('#mensagem-permissao').text('');
+        }
+    });
+ }
+ 
+function adicionarPermissao(id, usuario){
+    $.ajax({
+        url: 'paginas/' + pag + "/add_permissao.php",
+        method: 'POST',
+        data: {id, usuario},
+        dataType: "html",
+
+        success:function(result){
+            listarPermissoes(usuario);
+        }
+    });
+ }
+</script>
+

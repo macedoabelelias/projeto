@@ -198,5 +198,8 @@ HTML;
        
 
      $('#modalPermissoes').modal('show'); 
+     listarPermissoes(id);
  }
+
+
 </script>
