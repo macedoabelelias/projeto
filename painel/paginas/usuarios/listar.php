@@ -21,7 +21,7 @@ echo <<<HTML
     </thead> 
     <tbody>	
 HTML;
-}
+
 for($i=0; $i < $total_reg; $i++){	
     $id = $res[$i]['id'];
     $nome = $res[$i]['nome'];
@@ -48,10 +48,10 @@ for($i=0; $i < $total_reg; $i++){
             $classe_ativo = '#c4c4c4';
     }
 
-    // $mostrar_adm = '';
+    $mostrar_adm = '';
 	if($nivel == 'Administrador'){
 		$senha = '******';
-		// $mostrar_adm = 'ocultar';
+		$mostrar_adm = 'ocultar';
 	}
     
 
@@ -82,7 +82,11 @@ echo <<<HTML
 
         <big><a href="#" onclick="mostrar('{$nome}','{$email}','{$telefone}','{$endereco}','{$ativo}','{$dataF}', '{$senha}', '{$nivel}', 
         '{$foto}')" title="Mostrar Dados"><i class="fa fa-info-circle text-primary"></i></a></big>
+
         <big><a href="#" onclick="ativar('{$id}', '{$acao}')" title="{$titulo_link}"><i class="fa {$icone} text-success">
+        </i></a></big>
+
+        <big><a class="{$mostrar_adm}" href="#" onclick="permissoes('{$id}', '{$nome}')" title="Dar Permissões"><i class="fa fa-lock text-primary">
         </i></a></big>
 
 
@@ -96,6 +100,10 @@ echo <<<HTML
 <small><div align="center" id="mensagem-excluir"></div></small>
 </table>
 HTML;
+
+}else{
+    echo '<small>Nenhum Registro Encontrado!</small>';
+}
 ?>
 
 <script type="text/javascript">
@@ -182,4 +190,13 @@ HTML;
         
         limparCampos();
     }
+
+    function permissoes(id, nome){
+     
+     $('#id_permissoes').val(id);
+     $('#nome_permissoes').text(nome);
+       
+
+     $('#modalPermissoes').modal('show'); 
+ }
 </script>
