@@ -149,7 +149,7 @@ $pag = 'usuarios';
 	</div>
 </div>
 
-<!-- Modal Permissoes -->
+<!-- Modal Permissões -->
 <div class="modal fade" id="modalPermissoes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -196,7 +196,7 @@ function listarPermissoes(id){
 
         success:function(result){
             $("#listar_permissoes").html(result);
-            $('#mensagem-permissao').text('');
+            $('#mensagem_permissao').text('');
         }
     });
  }

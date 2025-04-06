@@ -37,12 +37,9 @@ if($total_reg > 0){
 
 	}
 
-echo '</div><hr>';	
+	echo '</div><hr>';	
 
 }
-
-
-
 
 $query = $pdo->query("SELECT * FROM grupo_acessos ORDER BY id asc");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
