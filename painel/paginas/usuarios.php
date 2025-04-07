@@ -1,6 +1,12 @@
 <?php
 $pag = 'usuarios';
-?>
+
+if(@$usuarios == 'ocultar'){
+	echo "<script>window.location='../index.php'</script>";
+    exit();
+}
+
+ ?>
 
 <a onclick="inserir()" type="button" class="btn btn-primary"><span class="fa fa-plus"></span> Usuário</a>
 
@@ -210,6 +216,44 @@ function adicionarPermissao(id, usuario){
 
         success:function(result){
             listarPermissoes(usuario);
+        }
+    });
+ }
+
+ function marcarTodos(){
+		let checkbox = document.getElementById('input-todos');
+		var usuario = $('#id_permissoes').val();
+		
+		if(checkbox.checked) {
+		    adicionarPermissoes(usuario);		    
+		} else {
+		    limparPermissoes(usuario);
+		}
+	}
+
+ function adicionarPermissoes(id_usuario){
+	
+	$.ajax({
+        url: 'paginas/' + pag + "/add_permissoes.php",
+        method: 'POST',
+        data: {id_usuario},
+        dataType: "html",
+
+        success:function(result){
+            listarPermissoes(id_usuario);
+        }
+    });
+ }
+
+ function limparPermissoes(id_usuario){
+	$.ajax({
+        url: 'paginas/' + pag + "/limpar_permissoes.php",
+        method: 'POST',
+        data: {id_usuario},
+        dataType: "html",
+
+        success:function(result){
+            listarPermissoes(id_usuario);
         }
     });
  }

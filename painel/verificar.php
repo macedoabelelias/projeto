@@ -1,8 +1,8 @@
-<?php
+<?php 
 @session_start();
 if (@$_SESSION['id'] == ""){
-    echo '<script>window.location="../index.php"</script>';
-    exit();
+	echo '<script>window.location="../"</script>';
+	exit();
 }
 
-?>
+ ?>
